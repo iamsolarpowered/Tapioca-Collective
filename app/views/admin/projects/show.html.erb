@@ -1,0 +1,38 @@
+<h1><%=h @project.name %></h1>
+
+<div id="sidebar">
+  <p>
+    <b>Development URL:</b><br />
+    <%= link_to h(@project.development_url), @project.development_url %>
+  </p>
+
+  <p>
+    <b>Production URL:</b><br />
+    <%= link_to h(@project.production_url), @project.production_url %>
+  </p>
+
+  <p>
+    <b>Repository URL:</b><br />
+    <%= link_to h(@project.repository_url), @project.repository_url %>
+  </p>
+
+  <p>
+    <% for photo in @project.photos -%>
+      <%= image_tag photo.file.url(:small) %><br /><br />
+    <% end -%>
+  </p>
+</div>
+
+<p>
+  <b>Client:</b>
+  <%= link_to h(@project.client.name), admin_client_path(@project.client) if @project.client %>
+</p>
+
+<%= simple_format h(@project.notes) %>
+
+
+<%= link_to 'Edit', edit_admin_project_path(@project) %> |
+<%= link_to 'Destroy', admin_project_path(@project),
+      :method => :delete,
+      :confirm => 'Are you sure you want to delete this project?' %> |
+<%= link_to 'Back', admin_projects_path %>

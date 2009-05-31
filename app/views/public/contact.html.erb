@@ -1,0 +1,38 @@
+<h1>Get in touch with Tapioca Collective</h1>
+
+<% form_tag "/send_message", :id => "contact_form", :method => :post do -%>
+  <p>
+    <label>Your name</label><br />
+    <input type="text" name="name" />
+  </p>
+
+  <p>
+    <label>Your email address</label><br />
+    <input type="text" name="email" />
+  </p>
+
+  <p>
+    <label>Your phone number</label><br />
+    <input type="text" name="phone" />
+  </p>
+
+  <p>
+    <label>Preferred contact method</label><br />
+    <input type="radio" name="contact_preference" value="email" checked="checked" /> Email<br />
+    <input type="radio" name="contact_preference" value="phone" /> Phone
+  </p>
+
+  <p>
+    <label>Your Web address</label><br />
+    <input type="text" name="url" value="http://" />
+  </p>
+
+  <p>
+    <label>Your message</label><br />
+    <textarea name="message"></textarea>
+  </p>
+
+  <p>
+    <input type="submit" value="Send" class="submit" />
+  </p>
+<% end -%>

@@ -1,0 +1,60 @@
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :client_name %><br />
+  <%= text_field_with_auto_complete :project, :client_name, {}, {
+        :url => formatted_admin_clients_path(:js),
+        :method => :get,
+        :param_name => 'search' } %>
+
+</p>
+
+<p>
+  <label>Visibility</label><br />
+  <%= f.check_box :public %> public<br />
+  <%= f.check_box :featured %> featured
+</p>
+
+<p>
+  <%= f.label :notes %><br />
+  <%= f.text_area :notes %>
+</p>
+
+<p>
+  <%= f.label :development_url, 'Development URL' %><br />
+  <%= f.text_field :development_url %>
+</p>
+
+<p>
+  <%= f.label :production_url, 'Production URL' %><br />
+  <%= f.text_field :production_url %>
+</p>
+
+<p>
+  <%= f.label :repository_url, 'Repository URL' %><br />
+  <%= f.text_field :repository_url %>
+</p>
+
+<p>
+  <label>Attach images</label><br />
+  <span id="attachment_fields">
+    <input type="file" name="project[attachments][]" /><br />
+  </span>
+  <small>
+    <%= link_to_function 'add another' do |page|
+          page.insert_html :bottom, 'attachment_fields', "<input type=\"file\" name=\"project[attachments][]\" /><br />"
+    end %>
+  </small>
+</p>
+
+<p>
+  <% for photo in @project.photos -%>
+    <%= image_tag photo.file.url(:thumbnail) %>
+    <%= link_to 'x', 'TODO',
+          :confirm => 'Are you sure you want to delete this image?',
+          :style => 'color: #900; margin-left: -1ex; font-weight: bold' %>
+  <% end -%>
+</p>

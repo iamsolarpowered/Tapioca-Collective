@@ -1,0 +1,8 @@
+<% div_for user do -%>
+  <%= image_tag h(user.gravatar_url), :alt => '' %>
+  <div>
+    <strong><%= link_to h(user.name), edit_admin_user_path(user) %></strong><br />
+    <small><%=h user.title %></small>
+  </div>
+  <br style="clear: left;" />
+<% end -%>

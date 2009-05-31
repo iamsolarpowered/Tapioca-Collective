@@ -1,0 +1,121 @@
+/* Copyright 2009 Ben Shymkiw */
+
+body {
+  background-color: #ddd;
+}
+
+h1 {
+  letter-spacing: 1px;
+}
+
+input[type="text"], textarea {
+  background-color: #eee;
+  border: dotted 1px #333;
+}
+
+/* HEADER */
+
+#logo_container {
+  text-align: right;
+}
+#logo_container a {
+  background-color: transparent;
+}
+
+/* MENU */
+
+ul#menu {
+  padding: 0;
+  margin: 0;
+  margin-bottom: .5em;
+}
+#menu li {
+  display: inline;
+  padding: .5em 0;
+  font-weight: bold;
+  border-left: solid 1px transparent;
+  border-right: solid 1px transparent;
+}
+#menu li:hover, #menu li:active {
+  background: white;
+  border-right: solid 1px #666;
+  border-top: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+}
+#menu a {
+  color: #333;
+  background: transparent;
+  padding: .5em 2em;
+}
+
+/* FLASH MESSAGES */
+#flash {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* SIDEBAR */
+
+#sidebar {
+  float: right;
+  min-height: 300px;
+  width: 200px;
+  padding: 0 1em;
+  margin-left: 1em;
+  border: dotted 1px #333;
+  background: #eee;
+  text-align: center;
+}
+#sidebar h2 {
+  font-weight: bold;
+  border: 0;
+}
+#sidebar a {
+  background-color: transparent;
+}
+#sidebar a:hover {
+  color: black;
+}
+#sidebar img {
+  margin-top: .5em;
+}
+
+/* MAIN CONTENT */
+
+#main {
+  background: white;
+  min-height: 500px;
+  padding: 1em;
+  border: solid 1px #666;
+  border-top: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+}
+#main p {
+  line-height: 1.3;
+}
+
+#content a {
+  font-weight: bold;
+}
+
+#contact_form {
+  width: 500px;
+  margin-left: 100px;
+}
+#contact_form textarea {
+  height: 200px;
+}
+
+/* FOOTER */
+
+#footer {
+  font-size: 12px;
+  padding-top: .5em;
+  padding-bottom: 2em;
+}
+#footer .left {
+  float: left;
+}
+#footer .right {
+  float: right;
+}

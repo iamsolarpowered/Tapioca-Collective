@@ -1,0 +1,24 @@
+<h1><%=h @client.name %></h1>
+
+<div id="sidebar">
+  <p>
+    <%= formatted_address @client %>
+    <%= map_link @client %>
+  </p>
+
+  <p>
+    <strong>Projects</strong>
+    <ul>
+      <% for project in @client.projects -%>
+        <li><%= link_to h(project.name), admin_project_path(project) %></li>
+      <% end -%>
+    </ul>
+  </p>
+</div>
+
+<%= simple_format h(@client.notes) %>
+
+<p class="nav">
+  <%= link_to 'Edit', edit_admin_client_path(@client) %> |
+  <%= link_to 'Back', admin_clients_path %>
+</p>

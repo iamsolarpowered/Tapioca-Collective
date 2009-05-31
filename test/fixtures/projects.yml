@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  client_id: 1
+  notes: MyText
+  development_url: MyString
+  production_url: MyString
+  repository_url: MyString
+
+two:
+  name: MyString
+  client_id: 1
+  notes: MyText
+  development_url: MyString
+  production_url: MyString
+  repository_url: MyString

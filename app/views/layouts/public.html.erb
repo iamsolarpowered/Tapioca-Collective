@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <%= auto_discovery_link_tag :rss, "/blog.rss" %>
+
+  <title>
+    <%= "#{controller.action_name.titleize} :: " unless controller.action_name == 'index' %>
+    Tapioca Collective :: Open source web development, design and consulting
+  </title>
+
+  <%= stylesheet_link_tag 'bubble_t', 'application', 'public' %>
+  <style type="text/css">
+    #menu #<%= controller.action_name %> {
+      background-color: white;
+      border-right: solid 1px #666;
+      border-top: solid 1px #ccc;
+      border-left: solid 1px #ccc;
+    }
+  </style>
+  <%= yield(:css) %>
+
+  <%= javascript_include_tag :defaults %>
+  <%= yield(:js) %>
+</head>
+<body>
+
+  <div id="container">
+
+    <div id="header">
+
+      <div id="logo_container"><%= link_to image_tag('logo.png'), root_url %></div>
+
+      <%= render :partial => 'menu' %>
+
+    </div>
+
+    <div id="main">
+
+      <div id="flash"<%= ' style="display: none;"' if flash.blank? %>>
+        <% flash.each do |type, message| -%>
+          <p class="<%= type %>"><%= message %></span><br />
+        <% end -%>
+      </div>
+
+      <%= render :partial => 'public/sidebar' %>
+
+      <div id="content">
+
+        <%= yield %>
+
+      </div>
+
+    </div>
+
+    <%= render :partial => 'public/footer' %>
+
+  </div>
+
+</body>
+</html>

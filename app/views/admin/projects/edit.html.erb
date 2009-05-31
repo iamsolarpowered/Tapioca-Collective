@@ -1,0 +1,16 @@
+<h1>Editing project</h1>
+
+<% form_for([:admin, @project],
+              :url => admin_project_path(@project),
+              :html => {:method => :put, :multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+
+  <p>
+    <%= f.submit 'Update', :class => 'submit' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_project_path(@project) %> |
+<%= link_to 'Back', admin_projects_path %>

@@ -1,0 +1,24 @@
+<% div_for project do -%>
+  <p>
+    <strong><%=h project.name %></strong><br />
+    <small>
+      <% unless project.client_name.blank? -%>
+        <i>for</i> <%=h project.client_name %><br />
+      <% end -%>
+      <% unless project.production_url.blank? -%>
+        <br />
+        <%= link_to project.production_url, project.production_url, :target => '_blank' %>
+      <% end -%>
+    </small>
+  </p>
+
+  <div class="images">
+    <% for photo in project.photos -%>
+      <%= image_tag photo.file.url(:small) %><br />
+    <% end -%>
+    &nbsp;
+  </div>
+
+  <%= simple_format project.notes %>
+  <br style="clear: left;" />
+<% end -%>

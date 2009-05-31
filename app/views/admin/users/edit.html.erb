@@ -1,0 +1,30 @@
+<h1>Editing user</h1>
+
+<% form_for(@user,
+      :url => admin_user_path(@user),
+      :html => {:method => :put} ) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+
+  <div id="change_password" style="display: none;"></div>
+
+  <ul>
+    <li id="change_password_link">
+      <%= link_to_function 'Change password' do |page|
+        page['change_password'].replace_html :partial => 'password', :locals => {:f => f}
+        page['change_password'].visual_effect :blind_down
+        page['change_password_link'].hide
+      end %>
+    </li>
+
+    <li>
+      <%= link_to 'Change avatar', 'http://en.gravatar.com/site/login', :target => '_blank' %>
+    </li>
+  </ul>
+
+  <p>
+    <%= f.submit 'Update', :class => 'submit' %>
+    <%= link_to 'Cancel', admin_users_path %>
+  </p>
+<% end %>

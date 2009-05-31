@@ -1,0 +1,29 @@
+/* Created by Ben Shymkiw - ben@tapiocacollective.com */
+
+/* HTML TAGS */
+
+form {
+  max-width: 600px;
+}
+
+/* CLASSES */
+
+.user, .project {
+  margin-bottom: 1em;
+}
+.user img, .project .images {
+  float: left;
+  margin-right: 1em;
+}
+.project .images img {
+  margin-bottom: 1em;
+}
+
+/* IDs */
+
+#sidebar {
+  padding: 1em;
+  margin-left: 1em;
+  background-color: #ddd;
+  border: dotted 1px #999;
+}

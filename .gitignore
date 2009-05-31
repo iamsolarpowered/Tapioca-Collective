@@ -1,0 +1,14 @@
+# Also run:
+#   touch db/.gitignore log/.gitignore tmp/.gitignore
+#
+# Don't forget to edit/move session_store and email initializers as well as database.yml!
+#
+*.DS_Store
+config/database.yml
+config/initializers/session_store.rb
+config/initializers/email.rb
+db/*.sqlite3
+db/*.db
+log/*
+tmp/**/*
+public/system/*

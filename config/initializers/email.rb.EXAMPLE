@@ -1,0 +1,12 @@
+ActionMailer::Base.delivery_method = :smtp
+
+ActionMailer::Base.perform_deliveries = true # Send email even in development
+
+ActionMailer::Base.smtp_settings = {
+  :address => "mail.EXAMPLE.com",
+  :port => 587,
+  :domain => "EXAMPLE.com",
+  :authentication => :login,
+  :user_name => "no-reply@EXAMPLE.com",
+  :password => "SECRET"
+}
