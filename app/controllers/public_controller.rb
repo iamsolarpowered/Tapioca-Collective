@@ -22,11 +22,17 @@ class PublicController < ApplicationController
   end
 
   def send_message
-    unless Mailer.deliver_simple_message :subject => 'Information request from TapiocaCollective.com',
+    msg = []
+    msg << "Preferred contact method: #{params[:contact_preference]}"
+    msg << "Email: #{params[:email]}"
+    msg << "Phone: #{params[:phone]}"
+    msg << "URL: #{params[:url]}"
+    msg << "\n#{params[:message]}"
+    unless Mailer.deliver_simple_message(:body => msg.join("\n"),
+        :subject => 'Information request from TapiocaCollective.com',
         :from => "\"#{params[:name]}\" <#{params[:email]}>",
-        :recipients => 'holla@tapiocacollective.com',
-        :body => "Preferred contact method: #{params[:contact_preference]}\nPhone: #{params[:phone]}\n\n#{params[:message]}"
-      flash[:notice] = 'Sorry, there was an error sending your message. Please double-check your input and try again.'
+        :recipients => 'holla@tapiocacollective.com')
+      flash[:error] = 'Sorry, there was an error sending your message. Please double-check your input and try again.'
       render :action => 'contact'
     end
   end
