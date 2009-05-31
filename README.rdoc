@@ -1,0 +1,5 @@
+= Tapioca Collective
+
+This is just the app we use for our marketing site and a bit of internal communication.
+
+Copyright (c) 2009 Tapioca Collective Members
