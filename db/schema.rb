@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090531035058) do
+ActiveRecord::Schema.define(:version => 20090601060334) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file_file_name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(:version => 20090531035058) do
     t.integer  "attachable_id"
     t.string   "attachable_type"
     t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blogs", :force => true do |t|
+    t.string   "feed_url"
+    t.datetime "feed_updated_at"
+    t.text     "feed_data"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

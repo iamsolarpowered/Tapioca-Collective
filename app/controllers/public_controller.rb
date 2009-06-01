@@ -1,4 +1,6 @@
 class PublicController < ApplicationController
+  before_filter :set_sidebar_projects
+
   def index
   end
 
@@ -7,14 +9,14 @@ class PublicController < ApplicationController
   end
 
   def projects
-    @projects = Project.featured(100)
+    @projects = Project.all_featured(100)
   end
 
   def contact
   end
 
   def blog
-    @posts = [] #Post.all_public
+    @posts = Blog.recent_entries
     respond_to do |format|
       format.html
       format.rss
@@ -35,6 +37,12 @@ class PublicController < ApplicationController
       flash[:error] = 'Sorry, there was an error sending your message. Please double-check your input and try again.'
       render :action => 'contact'
     end
+  end
+
+  protected
+
+  def set_sidebar_projects
+    @sidebar_projects ||= Project.all_featured.sort_by { rand }.first(2)
   end
 
 end

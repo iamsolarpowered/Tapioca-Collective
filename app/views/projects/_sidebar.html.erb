@@ -1,0 +1,7 @@
+<p>
+  <a href="/projects#<%=h project.name %>">
+    <strong><%=h project.name %></strong><br />
+    <small><i>for</i> <%=h project.client_name %></small><br />
+    <%= image_tag project.photos.first.file.url(:small) unless project.photos.blank? %>
+  </a>
+</p>

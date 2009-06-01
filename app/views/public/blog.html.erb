@@ -1,5 +1,21 @@
 <h1>Recent Articles by Tapioca Collective Members</h1>
 
-<p><small>
-  <a href="/blog.rss">Subscribe to our RSS feed</a> to keep up to date.
-</small></p>
+<p>
+  <small>
+    <a href="/blog.rss">Subscribe to our RSS feed</a> to keep up to date.
+  </small>
+</p>
+
+<div id="posts">
+  <% for post in @posts %>
+    <h2><%= link_to h(post[:title]), h(post[:url]), :target => '_blank' %></h2>
+    <small>
+      Posted <%= post[:published_at].to_date.to_s(:long) rescue '?' %>
+      by <%= post[:username] %>
+    </small>
+    <p>
+      <%=h post[:description] %>
+      <small><%= link_to 'Read More...', h(post[:url]), :target => '_blank' %></small>
+    </p>
+  <% end %>
+</div>

@@ -1,13 +1,14 @@
 <% div_for project do -%>
   <p>
-    <strong><%=h project.name %></strong><br />
+    <strong><%=h project.name %></strong>
+    <a name="<%=h project.name %>"></a><br />
     <small>
       <% unless project.client_name.blank? -%>
         <i>for</i> <%=h project.client_name %><br />
       <% end -%>
-      <% unless project.production_url.blank? -%>
+      <% if project.public_url -%>
         <br />
-        <%= link_to project.production_url, project.production_url, :target => '_blank' %>
+        <%= link_to project.public_url, project.public_url, :target => '_blank' %>
       <% end -%>
     </small>
   </p>
