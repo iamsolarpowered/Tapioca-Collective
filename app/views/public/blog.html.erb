@@ -8,14 +8,14 @@
 
 <div id="posts">
   <% for post in @posts %>
-    <h2><%= link_to h(post[:title]), h(post[:url]), :target => '_blank' %></h2>
+    <h2><%= link_to h(post.title), h(post.url), :target => '_blank' %></h2>
     <small>
-      Posted <%= post[:published_at].to_date.to_s(:long) rescue '?' %>
-      by <%= post[:username] %>
+      Posted <%= post.date_published.to_date.to_s(:long) rescue '?' %>
+      by <%= link_to post.author.login.titleize, "/about##{post.author.login}" %>
+      <%= link_to '[permalink]', h(post.url), :target => '_blank' %>
     </small>
     <p>
-      <%=h post[:description] %>
-      <small><%= link_to 'Read More...', h(post[:url]), :target => '_blank' %></small>
+      <%=h post.description %>
     </p>
   <% end %>
 </div>

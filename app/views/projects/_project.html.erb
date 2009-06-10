@@ -6,7 +6,7 @@
       <% unless project.client_name.blank? -%>
         <i>for</i> <%=h project.client_name %><br />
       <% end -%>
-      <% if project.public_url -%>
+      <% unless project.public_url.blank? -%>
         <br />
         <%= link_to project.public_url, project.public_url, :target => '_blank' %>
       <% end -%>
@@ -21,5 +21,6 @@
   </div>
 
   <%= simple_format project.notes %>
+
   <br style="clear: left;" />
 <% end -%>

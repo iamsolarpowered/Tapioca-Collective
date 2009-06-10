@@ -1,4 +1,5 @@
 <% div_for user do -%>
+  <a name="<%=h user.login %>"></a>
   <%= image_tag h(user.gravatar_url), :alt => '' %>
   <div>
     <strong><%= link_to h(user.name), user.url, :target => '_blank' %></strong><br />

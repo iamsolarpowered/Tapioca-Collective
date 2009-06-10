@@ -16,7 +16,7 @@ class PublicController < ApplicationController
   end
 
   def blog
-    @posts = Blog.recent_entries
+    @posts = Posts.recent
     respond_to do |format|
       format.html
       format.rss
