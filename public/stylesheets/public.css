@@ -84,11 +84,12 @@ ul#menu {
 
 #main {
   background: white;
-  min-height: 500px;
   padding: 1em;
   border: solid 1px #666;
   border-top: solid 1px #ccc;
   border-left: solid 1px #ccc;
+  min-height: 500px;
+
 }
 #main p {
   line-height: 1.3;

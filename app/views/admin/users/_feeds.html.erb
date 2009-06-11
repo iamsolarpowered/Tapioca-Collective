@@ -1,0 +1,11 @@
+<div id="user_feeds">
+  <label>Feed URLs</label>
+  <% for url in @user.feed_urls -%>
+    <input type="text" name="user[feed_urls][]" value="<%=h url %>" /><br />
+  <% end -%>
+</div>
+<small>
+  <%= link_to_function 'add another' do |page|
+    page.insert_html :bottom, :user_feeds, '<input type="text" name="user[feed_urls][]" /><br />'
+  end %>
+</small>

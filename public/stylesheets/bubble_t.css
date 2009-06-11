@@ -66,6 +66,10 @@ p {
   margin-bottom: 1em;
 }
 
+small {
+  font-size: 11px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

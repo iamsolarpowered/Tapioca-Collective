@@ -21,6 +21,13 @@ form {
 
 /* IDs */
 
+#login_status {
+  margin-top: -1em;
+  margin-bottom: 1em;
+  text-align: right;
+  font-size: 12px;
+}
+
 #sidebar {
   padding: 1em;
   margin-left: 1em;
