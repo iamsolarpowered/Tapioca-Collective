@@ -5,6 +5,7 @@
 #
 *.DS_Store
 config/database.yml
+config/deploy.rb
 config/initializers/session_store.rb
 config/initializers/email.rb
 db/*.sqlite3

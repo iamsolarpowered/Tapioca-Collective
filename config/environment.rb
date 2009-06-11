@@ -1,5 +1,10 @@
 # Be sure to restart your server when you modify this file
 
+# Dreamhost sucks...
+if RAILS_ENV = 'production'
+  ENV['GEM_PATH'] = '/home/tapiocacollective/.gems'
+end
+
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
