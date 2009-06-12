@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Dreamhost sucks...
-if RAILS_ENV == 'production'
+if ENV['RAILS_ENV'] == 'production'
   ENV['GEM_PATH'] = '/home/tapiocacollective/.gems'
 end
 
