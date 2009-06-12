@@ -4,7 +4,7 @@ class Posts
     blogs = Blog.all
     posts = []
     for blog in blogs
-      entries = blog.entries.first(3) if blog.entries
+      entries = blog.entries.blank? ? [] : blog.entries.first(3)
       for entry in entries
         posts << Post.new(blog.user, entry)
       end

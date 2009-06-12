@@ -3,7 +3,8 @@
   <div>
     <strong><%= link_to h(user.name), edit_admin_user_path(user) %></strong><br />
     <small>
-      <strong><%=h user.title %></strong>
+      <strong><%=h user.title %></strong><br />
+      <i><%=h user.location %></i><br />
       <%= simple_format user.blurb %>
     </small>
   </div>

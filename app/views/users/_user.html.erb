@@ -4,7 +4,8 @@
   <div>
     <strong><%= link_to h(user.name), user.url, :target => '_blank' %></strong><br />
     <small>
-      <strong><%=h user.title %></strong>
+      <strong><%=h user.title %></strong><br />
+      <i><%=h user.location %></i><br />
       <%= simple_format user.blurb %>
     </small>
   </div>
