@@ -12,7 +12,7 @@ class Blog < ActiveRecord::Base
   end
 
   def entries
-    feed_data.entries
+    feed_data.entries if feed_data
   end
 
   def parsed_feed
