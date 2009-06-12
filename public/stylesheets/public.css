@@ -120,3 +120,15 @@ ul#menu {
 #footer .right {
   float: right;
 }
+
+/* FORM VALIDATION */
+
+.validation-advice {
+  color: #c00;
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+input.validation-failed {
+  border: dotted #c00 1px;
+}

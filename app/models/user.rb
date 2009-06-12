@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   end
 
   def feed_urls=(urls)
+    self.blogs.each {|b| b.destroy } # Quick trick to allow editing of URLs
     urls.each {|url| self.blogs.build :feed_url => url unless url.blank? }
   end
 

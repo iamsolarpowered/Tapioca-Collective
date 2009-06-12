@@ -13,6 +13,8 @@
   <%= f.text_field :url %>
 </p>
 
+<%= render :partial => 'feeds' %>
+
 <p>
   <%= f.label :blurb %><br />
   <%= f.text_area :blurb %>
@@ -25,5 +27,5 @@
 
 <p>
   <%= f.label :email %><br />
-  <%= f.text_field :email %>
+  <%= f.text_field :email, :onfocus => 'if(this.value == \'\'){this.value = $(user_login).value + \'@tapiocacollective.com\'}' %>
 </p>

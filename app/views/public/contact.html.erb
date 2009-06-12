@@ -2,13 +2,14 @@
 
 <% form_tag "/send_message", :id => "contact_form", :method => :post do -%>
   <p>
-    <label>Your name</label><br />
-    <input type="text" name="name" />
+    <label>Your name</label><small>*</small><br />
+    <input type="text" name="name" class="required" />
   </p>
 
   <p>
-    <label>Your email address</label><br />
-    <input type="text" name="email" />
+    <label>Your email address</label><small>*</small><br />
+    <input type="text" name="email" class="required validate-email" />
+    <small>Don't worry, we won't send you any email you don't ask for.</small>
   </p>
 
   <p>
@@ -29,10 +30,21 @@
 
   <p>
     <label>Your message</label><br />
-    <textarea name="message"></textarea>
+    <textarea name="message" id="contact_message"></textarea>
   </p>
 
   <p>
+    <small style="float: right;">* Required fields</small>
     <input type="submit" value="Send" class="submit" />
   </p>
 <% end -%>
+
+<% content_for :js do -%>
+  <%= javascript_include_tag 'validation' %>
+<% end -%>
+
+<script type="text/javascript">
+<!--
+  new Validation('contact_form');
+-->
+</script>

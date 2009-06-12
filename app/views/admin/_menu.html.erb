@@ -10,4 +10,6 @@
     Logged in as <%= link_to h(current_user.login), edit_admin_user_path(current_user) %> |
     <%= link_to 'logout', logout_path %>
   </div>
+<% else -%>
+  <div style="height: 75px;">&nbsp;</div>
 <% end -%>
