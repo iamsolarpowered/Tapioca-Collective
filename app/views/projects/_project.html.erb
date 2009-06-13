@@ -1,17 +1,10 @@
 <% div_for project do -%>
-  <p>
-    <strong><%=h project.name %></strong>
-    <a name="<%=h project.name %>"></a><br />
-    <small>
-      <% unless project.client_name.blank? -%>
-        <i>for</i> <%=h project.client_name %><br />
-      <% end -%>
-      <% unless project.public_url.blank? -%>
-        <br />
-        <%= link_to project.public_url, project.public_url, :target => '_blank' %>
-      <% end -%>
-    </small>
-  </p>
+  <h2><%=h project.name %><a name="<%=h project.name %>"></a></h2>
+  <small>
+    <% unless project.public_url.blank? -%>
+      <%= link_to project.public_url, project.public_url, :target => '_blank' %>
+    <% end -%>
+  </small>
 
   <div class="images">
     <% for photo in project.photos -%>

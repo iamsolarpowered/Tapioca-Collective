@@ -28,7 +28,7 @@
   <%= link_to h(@project.client.name), admin_client_path(@project.client) if @project.client %>
 </p>
 
-<%= simple_format h(@project.notes) %>
+<%= simple_format @project.notes %>
 
 
 <%= link_to 'Edit', edit_admin_project_path(@project) %> |
