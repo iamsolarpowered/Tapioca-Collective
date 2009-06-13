@@ -5,7 +5,7 @@ class PublicController < ApplicationController
   end
 
   def about
-    @members = User.all
+    @members = User.all.sort_by(&:name)
   end
 
   def projects
