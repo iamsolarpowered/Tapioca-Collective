@@ -27,6 +27,10 @@ form {
 .project h2 {
   margin-bottom: 0;
 }
+.project #project_url {
+  font-size: 11px;
+  margin-bottom: 1.5em;
+}
 
 /* IDs */
 

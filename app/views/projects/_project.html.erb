@@ -1,15 +1,14 @@
 <% div_for project do -%>
   <h2><%=h project.name %><a name="<%=h project.name %>"></a></h2>
-  <small>
+  <div id="project_url">
     <% unless project.public_url.blank? -%>
       <%= link_to project.public_url, project.public_url, :target => '_blank' %>
     <% end -%>
-    <br />
-  </small>
+  </div>
 
   <div class="images">
     <% for photo in project.photos -%>
-      <%= image_tag photo.file.url(:small) %><br />
+      <%= link_to image_tag(photo.file.url(:small)), photo.file.url %><br />
     <% end -%>
     &nbsp;
   </div>
