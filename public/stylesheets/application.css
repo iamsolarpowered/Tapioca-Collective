@@ -18,6 +18,9 @@ form {
 .project .images img {
   margin-bottom: 1em;
 }
+.project .images a {
+  background-color: transparent;
+}
 .user img {
   border: solid 1px #666;
   border-top: solid 1px #ccc;
