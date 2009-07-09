@@ -3,5 +3,3 @@
 This is just the app we use for our marketing site and a bit of internal communication.
 
 Copyright (c) 2009 Ben Shymkiw and Tapioca Collective Members
-
-~
