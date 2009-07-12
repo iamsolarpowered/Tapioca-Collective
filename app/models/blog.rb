@@ -22,7 +22,9 @@ class Blog < ActiveRecord::Base
   def update_feed_data
     require 'open-uri'
     begin
-      feed = FeedNormalizer::FeedNormalizer.parse(open(feed_url))
+      feed = FeedNormalizer::FeedNormalizer.parse(open(feed_url),
+              :force_parser => FeedNormalizer::SimpleRssParser,
+              :try_others => true)
       unless feed.blank?
         self.update_attributes :feed_data => feed, :feed_updated_at => Time.now
         return true
