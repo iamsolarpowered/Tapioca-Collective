@@ -17,6 +17,7 @@ input[type="text"], textarea {
 
 #logo_container {
   text-align: right;
+  margin-top: 28px;
 }
 #logo_container a {
   background-color: transparent;
