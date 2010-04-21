@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090612204308) do
+ActiveRecord::Schema.define(:version => 20100421052137) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file_file_name"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20090612204308) do
     t.string   "url"
     t.text     "blurb"
     t.text     "location"
+    t.integer  "photo_id"
   end
 
 end

@@ -31,6 +31,10 @@ form {
   border-top: solid 1px #ccc;
   border-left: solid 1px #ccc;
 }
+.user .name a {
+  margin-left: -.2em;
+  font-weight: bold;
+}
 
 .project h2 {
   margin-bottom: 0;

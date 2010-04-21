@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   acts_as_authentic
 
   has_many :blogs
+  
+  has_one :photo, :as => :attachable
 
   def feed_urls
     urls = []
@@ -12,6 +14,14 @@ class User < ActiveRecord::Base
   def feed_urls=(urls)
     self.blogs.each {|b| b.destroy } # Quick trick to allow editing of URLs
     urls.each {|url| self.blogs.build :feed_url => url unless url.blank? }
+  end
+  
+  def avatar
+    photo
+  end
+  
+  def avatar=(file)
+    self.photo = Photo.create :file => file
   end
 
   def gravatar_url size = 150

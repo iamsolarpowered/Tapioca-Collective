@@ -1,8 +1,10 @@
+<a name="<%=h user.login %>"></a>
 <% div_for user do -%>
-  <a name="<%=h user.login %>"></a>
-  <%= image_tag h(user.gravatar_url), :alt => '' %>
+  <%= image_tag user.photo.file.url(:small), :alt => '' rescue nil %>
   <div>
-    <strong><%= link_to h(user.name), user.url, :target => '_blank' %></strong><br />
+    <div class="name">
+      <%= link_to h(user.name), user.url, :target => '_blank' %>
+    </div>
     <small>
       <strong><%=h user.title %></strong><br />
       <i><%=h user.location %></i><br />
