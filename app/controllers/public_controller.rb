@@ -15,6 +15,11 @@ class PublicController < ApplicationController
       @projects = Project.featured.all(:limit => 5, :order => 'random()')
     end
   end
+  
+  def show_project
+    @projects = [Project.find(params[:id])]
+    render :template => 'public/projects'
+  end
 
   def contact
   end

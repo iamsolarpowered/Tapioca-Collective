@@ -8,7 +8,6 @@ class Project < ActiveRecord::Base
   named_scope :featured, :conditions => {:featured => true}
   named_scope :public, :conditions => {:public => true}
   named_scope :by_category, lambda {|category| {:conditions => {:category => category}} }
-  named_scope :random, :order => 'random()'
 
   def attachments=(files)
     for file in files

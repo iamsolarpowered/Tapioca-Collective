@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Public
   map.connect ':action.:format', :controller => 'public'
+  map.connect 'projects/:id', :controller => 'public', :action => 'show_project'
   map.root :controller => 'public'
 
   # The priority is based upon order of creation: first created -> highest priority.

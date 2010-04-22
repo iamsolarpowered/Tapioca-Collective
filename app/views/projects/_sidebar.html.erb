@@ -1,5 +1,5 @@
 <p>
-  <a href="/projects#<%=h project.name %>">
+  <a href="/projects/<%= project.id %>">
     <strong><%=h project.name %></strong><br />
     <%= image_tag project.photos.first.file.url(:small) unless project.photos.blank? %>
   </a>
