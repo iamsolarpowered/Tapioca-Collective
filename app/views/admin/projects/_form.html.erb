@@ -13,6 +13,11 @@
 </p>
 
 <p>
+  <%= f.label :category %>
+  <%= f.select :category, Project::CATEGORIES, :include_blank => true %>
+</p>
+
+<p>
   <label>Visibility</label><br />
   <%= f.check_box :public %> public <small>(show URL to visitors)</small><br />
   <%= f.check_box :featured %> featured <small>(show project on site)</small>

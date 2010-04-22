@@ -1,11 +1,15 @@
 class Project < ActiveRecord::Base
+  CATEGORIES = ['Web', 'Print', 'Identity']
+
   belongs_to :client
   has_many :photos, :as => :attachable
 
-  named_scope :all_featured, lambda {|limit| { :order => 'created_at DESC', :limit => limit,
-                                           :conditions => {:featured => true} } }
-  named_scope :all_public, lambda {|limit| { :order => 'created_at DESC', :limit => limit,
-                                           :conditions => {:public => true} } }
+  named_scope :featured, :conditions => {:featured => true}
+  named_scope :public, :conditions => {:public => true}
+                                           
+  named_scope :by_category, lambda {|category| {:conditions => {:category => category}} }
+  
+  named_scope :random, :order => 'random()'
 
   def attachments=(files)
     for file in files

@@ -9,7 +9,11 @@ class PublicController < ApplicationController
   end
 
   def projects
-    @projects = Project.all_featured(100)
+    if params[:category]
+      @projects = Project.featured.by_category(params[:category])
+    else
+      @projects = Project.random.featured.first(5)
+    end
   end
 
   def contact
@@ -42,7 +46,7 @@ class PublicController < ApplicationController
   protected
 
   def set_sidebar_projects
-    @sidebar_projects ||= Project.all_featured.sort_by { rand }.first(2)
+    @sidebar_projects ||= Project.random.featured.first(2)
   end
 
 end

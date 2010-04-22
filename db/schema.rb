@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100421052137) do
+ActiveRecord::Schema.define(:version => 20100422020200) do
 
   create_table "attachments", :force => true do |t|
     t.string   "file_file_name"
@@ -55,7 +55,10 @@ ActiveRecord::Schema.define(:version => 20100421052137) do
     t.datetime "updated_at"
     t.boolean  "public"
     t.boolean  "featured"
+    t.string   "category"
   end
+
+  add_index "projects", ["category"], :name => "index_projects_on_category"
 
   create_table "users", :force => true do |t|
     t.string   "login"

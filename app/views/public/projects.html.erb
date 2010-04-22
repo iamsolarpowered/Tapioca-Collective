@@ -1,4 +1,13 @@
-<h1>Featured Projects</h1>
+<h1><%= params[:category] || 'Featured' %> Work</h1>
+
+<div id="categories">
+  <small>
+    <%= link_to 'Featured', '/projects' %> |
+    <%= link_to 'Web', '/projects?category=Web' %> |
+    <%= link_to 'Print', '/projects?category=Print' %> |
+    <%= link_to 'Identity', '/projects?category=Identity' %>
+  </small>
+</div>
 
 <br />
 
