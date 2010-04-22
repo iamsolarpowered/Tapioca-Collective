@@ -12,7 +12,7 @@ class PublicController < ApplicationController
     if params[:category]
       @projects = Project.featured.by_category(params[:category])
     else
-      @projects = Project.random.featured.first(5)
+      @projects = Project.featured.all(:limit => 5, :order => 'random()')
     end
   end
 
@@ -46,7 +46,7 @@ class PublicController < ApplicationController
   protected
 
   def set_sidebar_projects
-    @sidebar_projects ||= Project.random.featured.first(2)
+    @sidebar_projects ||= Project.featured.all(:limit => 2, :order => 'random()') 
   end
 
 end

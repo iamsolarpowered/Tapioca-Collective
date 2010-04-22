@@ -4,11 +4,10 @@ class Project < ActiveRecord::Base
   belongs_to :client
   has_many :photos, :as => :attachable
 
+  default_scope :order => 'created_at DESC'
   named_scope :featured, :conditions => {:featured => true}
   named_scope :public, :conditions => {:public => true}
-                                           
   named_scope :by_category, lambda {|category| {:conditions => {:category => category}} }
-  
   named_scope :random, :order => 'random()'
 
   def attachments=(files)
